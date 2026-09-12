@@ -1,56 +1,89 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace BasisData01
 {
     public partial class Form1 : Form
     {
+        MySqlConnection koneksi = new MySqlConnection("server=localhost;database=db_bp_bk;uid=root;pwd=;");
+
         public Form1()
         {
             InitializeComponent();
-
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void txtpetugas_TextChanged(object sender, EventArgs e)
         {
-
         }
+
         private void txtpass_TextChanged(object sender, EventArgs e)
         {
-
         }
+
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            db.crud($"SELECT * FROM login WHERE user = '{txtuser.Text}' and password = '{txtpass.Text}'");
-            int cekbaris = db.ds.Tables[0].Rows.Count;
-            if (cekbaris == 1)
+            string username = txtuser.Text.Trim();
+            string password = txtpass.Text;
+
+            if (username == "" || password == "")
             {
-                DataRow baris = db.ds.Tables[0].Rows[0];
-                dashboard F2 = new dashboard();
-                F2.Visible = true;
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Username atau Password anda Salah lorem ipsum");
+                MessageBox.Show("Username dan Password wajib diisi!");
+                return;
             }
 
+            try
+            {
+                koneksi.Open();
+
+                string query = "SELECT * FROM login WHERE user = @user AND password = @password";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, koneksi))
+                {
+                    cmd.Parameters.AddWithValue("@user", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string role = reader["role"].ToString();
+
+                            reader.Close();
+
+                            dashboard F2 = new dashboard();
+                            F2.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username atau Password salah!");
+                            txtpass.Clear();
+                            txtpass.Focus();
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Database tidak dapat terhubung.\n\nDetail: {ex.Message}", "Error Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (koneksi.State == ConnectionState.Open)
+                {
+                    koneksi.Close();
+                }
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -65,27 +98,28 @@ namespace BasisData01
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label2_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label2_Click_2(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+        }
     }
 }
+
