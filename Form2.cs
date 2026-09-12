@@ -62,20 +62,31 @@ namespace BasisData01
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (txtnisn.Text == "" || txtnmsiswa.Text == "" || txtkls.Text == "" || txtpp.Text == "")
+            if (txtnisn.Text == "" || txtnmsiswa.Text == "" ||
+                txtkls.Text == "" || txtpp.Text == "")
             {
-                MessageBox.Show("lengkapi data");
+                MessageBox.Show("Lengkapi data");
+                return;
             }
-            else
+            string cek = $"SELECT COUNT(*) FROM siswa WHERE nisn='{txtnisn.Text}'";
+            db.crud(cek);
+
+            int jumlah = Convert.ToInt32(db.ds.Tables[0].Rows[0][0]);
+
+            if (jumlah > 0)
             {
-                string nisn = txtnisn.Text;
-                string nama_siswa = txtnmsiswa.Text;
-                string kelas = txtkls.Text;
-                string point_pelanggaran = txtpp.Text;
-                db.crud($"INSERT INTO siswa VALUES( null, '{nisn}', '{nama_siswa}', '{kelas}', '{point_pelanggaran}')");
-                bersih();
-                TampilkanData();
+                MessageBox.Show("NISN sudah terdaftar!");
+                return;
             }
+            string nisn = txtnisn.Text;
+            string nama_siswa = txtnmsiswa.Text;
+            string kelas = txtkls.Text;
+            string point_pelanggaran = txtpp.Text;
+
+            db.crud($"INSERT INTO siswa VALUES(null, '{nisn}', '{nama_siswa}', '{kelas}', '{point_pelanggaran}')");
+            MessageBox.Show("Data berhasil ditambahkan");
+            bersih();
+            TampilkanData();
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -118,6 +129,36 @@ namespace BasisData01
                 txtnmsiswa.Text = baris.Cells[1].Value.ToString();
                 txtkls.Text = baris.Cells[2].Value.ToString();
                 txtpp.Text = baris.Cells[3].Value.ToString();
+            }
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            if (txtnisn.Text == "")
+            {
+                MessageBox.Show("Pilih data yang ingin dihapus terlebih dahulu");
+                return;
+            }
+
+            DialogResult hasil = MessageBox.Show(
+                "Yakin ingin menghapus data siswa ini?",
+                "Konfirmasi Hapus",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (hasil == DialogResult.Yes)
+            {
+                string nisn = txtnisn.Text;
+
+                string query = $"DELETE FROM siswa WHERE nisn='{nisn}'";
+
+                db.crud(query);
+
+                MessageBox.Show("Data berhasil dihapus");
+
+                bersih();
+                TampilkanData();
             }
         }
     }

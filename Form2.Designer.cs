@@ -98,6 +98,7 @@ namespace BasisData01
             this.guna2Button4.Size = new System.Drawing.Size(180, 50);
             this.guna2Button4.TabIndex = 14;
             this.guna2Button4.Text = "Delete";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // guna2Button3
             // 
