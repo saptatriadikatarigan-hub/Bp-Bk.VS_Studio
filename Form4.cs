@@ -1,81 +1,128 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace BasisData01
 {
     public partial class Form4 : Form
     {
-        public Form4()
+        private int idSiswa;
+        private MySqlConnection koneksi;
+
+        public Form4(int idSiswa)
         {
             InitializeComponent();
+
+            this.idSiswa = idSiswa;
+
+            koneksi = new MySqlConnection(
+                "server=localhost;database=db_bp_bk;uid=root;pwd=;");
+
+            this.Load += Form4_Load_1;
+        }
+
+        private void Form4_Load_1(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("ID Siswa: " + idSiswa);
+
+                koneksi.Open();
+
+                TampilkanDashboard();
+                TampilkanJadwal();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Gagal terhubung ke database.\n\n" + ex.Message,
+                    "Error Database",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Terjadi kesalahan.\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            finally
+            {
+                if (koneksi != null &&
+                    koneksi.State == ConnectionState.Open)
+                {
+                    koneksi.Close();
+                }
+            }
         }
 
         public void TampilkanDashboard()
         {
-            db.crud("SELECT COUNT(*) AS total " +"FROM jadwal_konseling " +"WHERE id_siswa='5'");
-            lbTotalJadwal.Text =db.ds.Tables[0].Rows[0]["total"].ToString();
+            string query = "SELECT COUNT(*) AS total, COALESCE(SUM(status = 'Menunggu'), 0) AS menunggu, COALESCE(SUM(status = 'Disetujui'), 0) AS disetujui, COALESCE(SUM(status = 'Ditolak'), 0) AS ditolak FROM jadwal_konseling WHERE id_siswa = @idSiswa";
 
-            db.crud("SELECT COUNT(*) AS total " +"FROM jadwal_konseling " +"WHERE id_siswa='5' " +"AND status='Menunggu'");
-            lbMenunggu.Text =db.ds.Tables[0].Rows[0]["total"].ToString();
+            using (MySqlCommand cmd = new MySqlCommand(query, koneksi))
+            {
+                cmd.Parameters.AddWithValue("@idSiswa", idSiswa);
 
-            db.crud("SELECT COUNT(*) AS total " +"FROM jadwal_konseling " +"WHERE id_siswa='5' " +"AND status='Disetujui'");
-            lbDisetujui.Text = db.ds.Tables[0].Rows[0]["total"].ToString();
-
-            db.crud("SELECT COUNT(*) AS total " +"FROM jadwal_konseling " +"WHERE id_siswa='5' " +"AND status='Ditolak'");
-            lbDitolak.Text =db.ds.Tables[0].Rows[0]["total"].ToString();
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        lbTotalJadwal.Text = reader["total"].ToString();
+                        lbMenunggu.Text = reader["menunggu"].ToString();
+                        lbDisetujui.Text = reader["disetujui"].ToString();
+                        lbDitolak.Text = reader["ditolak"].ToString();
+                    }
+                }
+            }
         }
-
 
         public void TampilkanJadwal()
         {
-            dataGridView1.Rows.Clear();
+            string query = "SELECT g.nama_guru AS Guru, DATE_FORMAT(j.tanggal, '%Y-%m-%d') AS Tanggal, TIME_FORMAT(j.jam, '%H:%i') AS Jam, j.status AS Status FROM jadwal_konseling j INNER JOIN guru g ON j.id_guru = g.id_guru WHERE j.id_siswa = @idSiswa ORDER BY j.tanggal DESC";
 
-            db.crud( "SELECT " +"g.nama_guru, " +"DATE_FORMAT(j.tanggal, '%Y-%m-%d') AS tanggal, " +"TIME_FORMAT(j.jam, '%H:%i') AS jam " +"FROM jadwal_konseling j " +"INNER JOIN guru g ON j.id_guru = g.id_guru " +"WHERE j.id_siswa='5' " +"ORDER BY j.tanggal DESC");
-            foreach (DataRow baris in db.ds.Tables[0].Rows)
+            using (MySqlCommand cmd = new MySqlCommand(query, koneksi))
             {
-                string nama_guru = "" + baris["nama_guru"];
-                string tanggal = "" + baris["tanggal"];
-                string jam = "" + baris["jam"];
+                cmd.Parameters.AddWithValue("@idSiswa", idSiswa);
 
-                dataGridView1.Rows.Add(nama_guru,tanggal,jam);
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                {
+                    DataTable table = new DataTable();
+
+                    adapter.Fill(table);
+
+                    dataGridView1.DataSource = table;
+                }
             }
-        }
-        private void Form4_Load_1(object sender, EventArgs e)
-        {
-            TampilkanDashboard();
-            TampilkanJadwal();
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void guna2Panel3_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void lbDisetujui_Click(object sender, EventArgs e)
         {
+        }
 
+        private void lbDitolak_Click(object sender, EventArgs e)
+        {
         }
     }
 }

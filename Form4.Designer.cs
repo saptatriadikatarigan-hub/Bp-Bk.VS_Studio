@@ -46,6 +46,7 @@ namespace BasisData01
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -90,6 +91,7 @@ namespace BasisData01
             this.lbDitolak.Size = new System.Drawing.Size(93, 32);
             this.lbDitolak.TabIndex = 3;
             this.lbDitolak.Text = "label4";
+            this.lbDitolak.Click += new System.EventHandler(this.lbDitolak_Click);
             // 
             // label4
             // 
@@ -212,7 +214,8 @@ namespace BasisData01
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3});
+            this.Column3,
+            this.Column4});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 730);
             this.dataGridView1.Name = "dataGridView1";
@@ -239,6 +242,12 @@ namespace BasisData01
             this.Column3.HeaderText = "Jam";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Status";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
             // 
             // Form4
             // 
@@ -282,5 +291,6 @@ namespace BasisData01
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

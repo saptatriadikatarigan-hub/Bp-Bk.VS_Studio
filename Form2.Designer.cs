@@ -30,6 +30,7 @@ namespace BasisData01
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCari = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -48,7 +49,6 @@ namespace BasisData01
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCari = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -77,14 +77,38 @@ namespace BasisData01
             this.panel1.Size = new System.Drawing.Size(1924, 1050);
             this.panel1.TabIndex = 0;
             // 
+            // txtCari
+            // 
+            this.txtCari.Animated = true;
+            this.txtCari.BorderRadius = 15;
+            this.txtCari.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCari.DefaultText = "";
+            this.txtCari.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCari.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCari.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCari.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCari.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCari.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCari.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCari.Location = new System.Drawing.Point(23, 299);
+            this.txtCari.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCari.Name = "txtCari";
+            this.txtCari.PlaceholderText = "";
+            this.txtCari.SelectedText = "";
+            this.txtCari.Size = new System.Drawing.Size(245, 43);
+            this.txtCari.TabIndex = 16;
+            this.txtCari.TextChanged += new System.EventHandler(this.txtCari_TextChanged);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(503, 156);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(32, 269);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.Size = new System.Drawing.Size(103, 25);
             this.label5.TabIndex = 15;
-            this.label5.Text = "label5";
+            this.label5.Text = "Cari Data";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // guna2Button4
             // 
@@ -95,7 +119,7 @@ namespace BasisData01
             this.guna2Button4.FillColor = System.Drawing.Color.Red;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button4.Location = new System.Drawing.Point(23, 365);
+            this.guna2Button4.Location = new System.Drawing.Point(757, 156);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(180, 50);
             this.guna2Button4.TabIndex = 14;
@@ -111,7 +135,7 @@ namespace BasisData01
             this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.Location = new System.Drawing.Point(23, 297);
+            this.guna2Button3.Location = new System.Drawing.Point(507, 156);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(180, 50);
             this.guna2Button3.TabIndex = 13;
@@ -127,7 +151,7 @@ namespace BasisData01
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(23, 227);
+            this.guna2Button2.Location = new System.Drawing.Point(259, 156);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(180, 50);
             this.guna2Button2.TabIndex = 12;
@@ -318,26 +342,6 @@ namespace BasisData01
             this.Column5.HeaderText = "Poin_Pelanggaran";
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
-            // 
-            // txtCari
-            // 
-            this.txtCari.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCari.DefaultText = "";
-            this.txtCari.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCari.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCari.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCari.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCari.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCari.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCari.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCari.Location = new System.Drawing.Point(713, 195);
-            this.txtCari.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCari.Name = "txtCari";
-            this.txtCari.PlaceholderText = "";
-            this.txtCari.SelectedText = "";
-            this.txtCari.Size = new System.Drawing.Size(245, 46);
-            this.txtCari.TabIndex = 16;
-            this.txtCari.TextChanged += new System.EventHandler(this.txtCari_TextChanged);
             // 
             // Form2
             // 

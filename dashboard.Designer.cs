@@ -44,6 +44,7 @@ namespace BasisData01
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnltengah = new System.Windows.Forms.Panel();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.pnlside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -55,6 +56,7 @@ namespace BasisData01
             // 
             this.pnlside.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlside.BorderColor = System.Drawing.Color.Transparent;
+            this.pnlside.Controls.Add(this.guna2Button5);
             this.pnlside.Controls.Add(this.guna2Button4);
             this.pnlside.Controls.Add(this.label4);
             this.pnlside.Controls.Add(this.guna2CirclePictureBox2);
@@ -244,6 +246,21 @@ namespace BasisData01
             this.pnltengah.Size = new System.Drawing.Size(1660, 924);
             this.pnltengah.TabIndex = 4;
             // 
+            // guna2Button5
+            // 
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button5.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.Location = new System.Drawing.Point(0, 290);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.Size = new System.Drawing.Size(286, 45);
+            this.guna2Button5.TabIndex = 5;
+            this.guna2Button5.Text = "Guru";
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -289,5 +306,6 @@ namespace BasisData01
         private System.Windows.Forms.Panel pnltengah;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -24,6 +25,7 @@ namespace BasisData01
 
         private void txtpass_TextChanged(object sender, EventArgs e)
         {
+
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
@@ -31,9 +33,17 @@ namespace BasisData01
             string username = txtuser.Text.Trim();
             string password = txtpass.Text;
 
-            if (username == "" || password == "")
+            if (username == "")
             {
-                MessageBox.Show("Username dan Password wajib diisi!");
+                MessageBox.Show("Username wajib diisi!", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtuser.Focus();
+                return;
+            }
+
+            if (password == "")
+            {
+                MessageBox.Show("Password wajib diisi!", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtpass.Focus();
                 return;
             }
 
@@ -41,7 +51,7 @@ namespace BasisData01
             {
                 koneksi.Open();
 
-                string query = "SELECT * FROM login WHERE user = @user AND password = @password";
+                string query = "SELECT id_user, role FROM login WHERE user = @user AND password = @password";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, koneksi))
                 {
@@ -54,15 +64,24 @@ namespace BasisData01
                         {
                             string role = reader["role"].ToString();
 
-                            reader.Close();
+                            if (role == "admin" || role == "anggota")
+                            {
+                                MessageBox.Show("Login berhasil!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            dashboard F2 = new dashboard();
-                            F2.Show();
-                            this.Hide();
+                                reader.Close();
+
+                                dashboard F2 = new dashboard();
+                                F2.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Role akun tidak valid!", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Username atau Password salah!");
+                            MessageBox.Show("Username atau Password salah!", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtpass.Clear();
                             txtpass.Focus();
                         }

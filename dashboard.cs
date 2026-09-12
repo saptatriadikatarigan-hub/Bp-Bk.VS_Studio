@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Data;
 
 namespace BasisData01
 {
     public partial class dashboard : Form
     {
-        private bool isSidebarExpanded= true;
+        //private bool isSidebarExpanded= true;
 
         private const int ExpandedWidth = 150;
         private const int CollapsedWidth = -200;
+        private int idSiswa = 5;
         public dashboard()
         {
             InitializeComponent();
@@ -102,7 +102,8 @@ namespace BasisData01
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            Form4 Menu = new Form4() { TopMost = true, TopLevel = false };
+            Form4 Menu = new Form4(idSiswa)
+            {TopMost = true,TopLevel = false};
             KFE.untukformsapta(Menu, pnltengah);
         }
 
@@ -116,6 +117,11 @@ namespace BasisData01
         {
             Form1 formLogin = new Form1();
             formLogin.Show();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
