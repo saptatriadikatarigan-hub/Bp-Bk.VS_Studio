@@ -121,7 +121,8 @@ namespace BasisData01
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-
+            Form5 Menu = new Form5() { TopMost = true, TopLevel = false };
+            KFE.untukformsapta(Menu, pnltengah);
         }
     }
 }

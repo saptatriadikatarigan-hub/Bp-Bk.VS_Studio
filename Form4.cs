@@ -26,8 +26,6 @@ namespace BasisData01
         {
             try
             {
-                MessageBox.Show("ID Siswa: " + idSiswa);
-
                 koneksi.Open();
 
                 TampilkanDashboard();
@@ -63,7 +61,14 @@ namespace BasisData01
 
         public void TampilkanDashboard()
         {
-            string query = "SELECT COUNT(*) AS total, COALESCE(SUM(status = 'Menunggu'), 0) AS menunggu, COALESCE(SUM(status = 'Disetujui'), 0) AS disetujui, COALESCE(SUM(status = 'Ditolak'), 0) AS ditolak FROM jadwal_konseling WHERE id_siswa = @idSiswa";
+            string query = @"
+                SELECT
+                    COUNT(*) AS total,
+                    COALESCE(SUM(status = 'Menunggu'), 0) AS menunggu,
+                    COALESCE(SUM(status = 'Disetujui'), 0) AS disetujui,
+                    COALESCE(SUM(status = 'Ditolak'), 0) AS ditolak
+                FROM jadwal_konseling
+                WHERE id_siswa = @idSiswa";
 
             using (MySqlCommand cmd = new MySqlCommand(query, koneksi))
             {
@@ -84,7 +89,18 @@ namespace BasisData01
 
         public void TampilkanJadwal()
         {
-            string query = "SELECT g.nama_guru AS Guru, DATE_FORMAT(j.tanggal, '%Y-%m-%d') AS Tanggal, TIME_FORMAT(j.jam, '%H:%i') AS Jam, j.status AS Status FROM jadwal_konseling j INNER JOIN guru g ON j.id_guru = g.id_guru WHERE j.id_siswa = @idSiswa ORDER BY j.tanggal DESC";
+            string query = @"
+                SELECT
+                    g.nama_guru AS Guru,
+                    DATE_FORMAT(j.tanggal, '%Y-%m-%d') AS Tanggal,
+                    TIME_FORMAT(j.jam, '%H:%i') AS Jam,
+                    j.keperluan AS Keperluan,
+                    j.status AS Status
+                FROM jadwal_konseling j
+                INNER JOIN guru g
+                    ON j.id_guru = g.id_guru
+                WHERE j.id_siswa = @idSiswa
+                ORDER BY j.tanggal DESC, j.jam DESC";
 
             using (MySqlCommand cmd = new MySqlCommand(query, koneksi))
             {
@@ -99,6 +115,11 @@ namespace BasisData01
                     dataGridView1.DataSource = table;
                 }
             }
+
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -109,11 +130,15 @@ namespace BasisData01
         {
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(
+            object sender,
+            DataGridViewCellEventArgs e)
         {
         }
 
-        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        private void guna2Panel3_Paint(
+            object sender,
+            PaintEventArgs e)
         {
         }
 
