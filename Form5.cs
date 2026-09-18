@@ -1,7 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace BasisData01
 {
@@ -108,8 +108,7 @@ namespace BasisData01
             {
                 koneksi.Open();
 
-                string query = @"
-                    SELECT
+                string query = @"SELECT
                         j.id_jadwal_guru AS ID,
                         j.id_guru AS IDGuru,
                         g.nama_guru AS Guru,
@@ -179,14 +178,8 @@ namespace BasisData01
 
                 cmd.Parameters.AddWithValue("@idGuru", cmbGuru.SelectedValue);
                 cmd.Parameters.AddWithValue("@hari", cmbHari.Text);
-                cmd.Parameters.AddWithValue(
-                    "@jamMulai",
-                    dtpJamMulai.Value.ToString("HH:mm:ss")
-                );
-                cmd.Parameters.AddWithValue(
-                    "@jamSelesai",
-                    dtpJamSelesai.Value.ToString("HH:mm:ss")
-                );
+                cmd.Parameters.AddWithValue("@jamMulai",dtpJamMulai.Value.ToString("HH:mm:ss"));
+                cmd.Parameters.AddWithValue("@jamSelesai",dtpJamSelesai.Value.ToString("HH:mm:ss"));
                 cmd.Parameters.AddWithValue("@status", cmbStatus.Text);
 
                 cmd.ExecuteNonQuery();
@@ -489,6 +482,16 @@ namespace BasisData01
             object sender,
             EventArgs e)
         {
+        }
+
+        private void dtpJamSelesai_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpJamMulai_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

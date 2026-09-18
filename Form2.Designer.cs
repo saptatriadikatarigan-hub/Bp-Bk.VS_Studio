@@ -73,14 +73,14 @@ namespace BasisData01
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1924, 1050);
+            this.panel1.Size = new System.Drawing.Size(1370, 749);
             this.panel1.TabIndex = 0;
             // 
             // txtCari
             // 
             this.txtCari.Animated = true;
-            this.txtCari.BorderRadius = 15;
             this.txtCari.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCari.DefaultText = "";
             this.txtCari.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -90,12 +90,11 @@ namespace BasisData01
             this.txtCari.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCari.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCari.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCari.Location = new System.Drawing.Point(23, 299);
-            this.txtCari.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCari.Location = new System.Drawing.Point(0, 330);
             this.txtCari.Name = "txtCari";
             this.txtCari.PlaceholderText = "";
             this.txtCari.SelectedText = "";
-            this.txtCari.Size = new System.Drawing.Size(245, 43);
+            this.txtCari.Size = new System.Drawing.Size(218, 28);
             this.txtCari.TabIndex = 16;
             this.txtCari.TextChanged += new System.EventHandler(this.txtCari_TextChanged);
             // 
@@ -103,9 +102,10 @@ namespace BasisData01
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 269);
+            this.label5.Location = new System.Drawing.Point(6, 310);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 25);
+            this.label5.Size = new System.Drawing.Size(76, 17);
             this.label5.TabIndex = 15;
             this.label5.Text = "Cari Data";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -119,9 +119,10 @@ namespace BasisData01
             this.guna2Button4.FillColor = System.Drawing.Color.Red;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button4.Location = new System.Drawing.Point(757, 156);
+            this.guna2Button4.Location = new System.Drawing.Point(505, 101);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(180, 50);
+            this.guna2Button4.Size = new System.Drawing.Size(120, 32);
             this.guna2Button4.TabIndex = 14;
             this.guna2Button4.Text = "Delete";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
@@ -135,9 +136,10 @@ namespace BasisData01
             this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.Location = new System.Drawing.Point(507, 156);
+            this.guna2Button3.Location = new System.Drawing.Point(338, 101);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(180, 50);
+            this.guna2Button3.Size = new System.Drawing.Size(120, 32);
             this.guna2Button3.TabIndex = 13;
             this.guna2Button3.Text = "Update";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
@@ -151,9 +153,10 @@ namespace BasisData01
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(259, 156);
+            this.guna2Button2.Location = new System.Drawing.Point(173, 101);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(180, 50);
+            this.guna2Button2.Size = new System.Drawing.Size(120, 32);
             this.guna2Button2.TabIndex = 12;
             this.guna2Button2.Text = "View";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
@@ -167,9 +170,10 @@ namespace BasisData01
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(23, 156);
+            this.guna2Button1.Location = new System.Drawing.Point(15, 101);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(180, 50);
+            this.guna2Button1.Size = new System.Drawing.Size(120, 32);
             this.guna2Button1.TabIndex = 11;
             this.guna2Button1.Text = "Insert";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -178,9 +182,10 @@ namespace BasisData01
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(775, 20);
+            this.label4.Location = new System.Drawing.Point(517, 13);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 22);
+            this.label4.Size = new System.Drawing.Size(122, 15);
             this.label4.TabIndex = 10;
             this.label4.Text = "Poin Pelanggaran";
             // 
@@ -188,9 +193,10 @@ namespace BasisData01
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(576, 20);
+            this.label3.Location = new System.Drawing.Point(384, 13);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 22);
+            this.label3.Size = new System.Drawing.Size(43, 15);
             this.label3.TabIndex = 9;
             this.label3.Text = "Kelas";
             // 
@@ -198,9 +204,10 @@ namespace BasisData01
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(302, 20);
+            this.label2.Location = new System.Drawing.Point(201, 13);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.Size = new System.Drawing.Size(87, 15);
             this.label2.TabIndex = 8;
             this.label2.Text = "Nama Siswa";
             // 
@@ -208,9 +215,10 @@ namespace BasisData01
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(85, 20);
+            this.label1.Location = new System.Drawing.Point(57, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 22);
+            this.label1.Size = new System.Drawing.Size(36, 15);
             this.label1.TabIndex = 7;
             this.label1.Text = "Nisn";
             // 
@@ -227,12 +235,11 @@ namespace BasisData01
             this.txtpp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtpp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtpp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtpp.Location = new System.Drawing.Point(757, 56);
-            this.txtpp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtpp.Location = new System.Drawing.Point(505, 36);
             this.txtpp.Name = "txtpp";
             this.txtpp.PlaceholderText = "";
             this.txtpp.SelectedText = "";
-            this.txtpp.Size = new System.Drawing.Size(201, 42);
+            this.txtpp.Size = new System.Drawing.Size(134, 27);
             this.txtpp.TabIndex = 6;
             // 
             // txtkls
@@ -248,12 +255,11 @@ namespace BasisData01
             this.txtkls.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtkls.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtkls.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtkls.Location = new System.Drawing.Point(507, 56);
-            this.txtkls.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtkls.Location = new System.Drawing.Point(338, 36);
             this.txtkls.Name = "txtkls";
             this.txtkls.PlaceholderText = "";
             this.txtkls.SelectedText = "";
-            this.txtkls.Size = new System.Drawing.Size(201, 42);
+            this.txtkls.Size = new System.Drawing.Size(134, 27);
             this.txtkls.TabIndex = 4;
             // 
             // txtnmsiswa
@@ -269,12 +275,11 @@ namespace BasisData01
             this.txtnmsiswa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtnmsiswa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtnmsiswa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnmsiswa.Location = new System.Drawing.Point(259, 56);
-            this.txtnmsiswa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtnmsiswa.Location = new System.Drawing.Point(173, 36);
             this.txtnmsiswa.Name = "txtnmsiswa";
             this.txtnmsiswa.PlaceholderText = "";
             this.txtnmsiswa.SelectedText = "";
-            this.txtnmsiswa.Size = new System.Drawing.Size(201, 42);
+            this.txtnmsiswa.Size = new System.Drawing.Size(134, 27);
             this.txtnmsiswa.TabIndex = 3;
             // 
             // txtnisn
@@ -290,12 +295,11 @@ namespace BasisData01
             this.txtnisn.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtnisn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtnisn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnisn.Location = new System.Drawing.Point(13, 56);
-            this.txtnisn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtnisn.Location = new System.Drawing.Point(9, 36);
             this.txtnisn.Name = "txtnisn";
             this.txtnisn.PlaceholderText = "";
             this.txtnisn.SelectedText = "";
-            this.txtnisn.Size = new System.Drawing.Size(201, 42);
+            this.txtnisn.Size = new System.Drawing.Size(134, 27);
             this.txtnisn.TabIndex = 1;
             // 
             // dataGridView1
@@ -311,11 +315,12 @@ namespace BasisData01
             this.Column5});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Desktop;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 741);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 548);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1924, 309);
+            this.dataGridView1.Size = new System.Drawing.Size(1370, 201);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -345,10 +350,11 @@ namespace BasisData01
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);

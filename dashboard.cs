@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace BasisData01
 {
@@ -25,7 +17,7 @@ namespace BasisData01
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult setuhju = MessageBox.Show("apakah mau mangkat?","pemberitahuan",
+            DialogResult setuhju = MessageBox.Show("apakah mau mangkat?", "pemberitahuan",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (setuhju == DialogResult.Yes)
             {
@@ -33,9 +25,9 @@ namespace BasisData01
                 f1.Visible = true;
                 this.Hide();
             }
-             
+
         }
-  
+
 
         private void dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -103,7 +95,7 @@ namespace BasisData01
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
             Form4 Menu = new Form4(idSiswa)
-            {TopMost = true,TopLevel = false};
+            { TopMost = true, TopLevel = false };
             KFE.untukformsapta(Menu, pnltengah);
         }
 

@@ -30,6 +30,7 @@ namespace BasisData01
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpTanggal = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@ namespace BasisData01
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtKeperluan = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtJam = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dtpTanggal = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -82,9 +82,27 @@ namespace BasisData01
             this.panel1.Controls.Add(this.txtJam);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1920, 1046);
+            this.panel1.Size = new System.Drawing.Size(924, 512);
             this.panel1.TabIndex = 0;
+            // 
+            // dtpTanggal
+            // 
+            this.dtpTanggal.BorderRadius = 7;
+            this.dtpTanggal.Checked = true;
+            this.dtpTanggal.CustomFormat = "yyyy-MM-dd";
+            this.dtpTanggal.FillColor = System.Drawing.SystemColors.Highlight;
+            this.dtpTanggal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpTanggal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTanggal.Location = new System.Drawing.Point(616, 32);
+            this.dtpTanggal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpTanggal.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpTanggal.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpTanggal.Name = "dtpTanggal";
+            this.dtpTanggal.Size = new System.Drawing.Size(196, 23);
+            this.dtpTanggal.TabIndex = 27;
+            this.dtpTanggal.Value = new System.DateTime(2026, 9, 12, 17, 6, 18, 416);
             // 
             // guna2Button6
             // 
@@ -95,9 +113,10 @@ namespace BasisData01
             this.guna2Button6.FillColor = System.Drawing.Color.Blue;
             this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button6.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button6.Location = new System.Drawing.Point(1113, 241);
+            this.guna2Button6.Location = new System.Drawing.Point(742, 157);
+            this.guna2Button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(180, 50);
+            this.guna2Button6.Size = new System.Drawing.Size(120, 32);
             this.guna2Button6.TabIndex = 26;
             this.guna2Button6.Text = "Disetujui";
             this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
@@ -111,9 +130,10 @@ namespace BasisData01
             this.guna2Button5.FillColor = System.Drawing.Color.Red;
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button5.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button5.Location = new System.Drawing.Point(1349, 241);
+            this.guna2Button5.Location = new System.Drawing.Point(899, 157);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(180, 50);
+            this.guna2Button5.Size = new System.Drawing.Size(120, 32);
             this.guna2Button5.TabIndex = 25;
             this.guna2Button5.Text = "Ditolak";
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
@@ -122,9 +142,10 @@ namespace BasisData01
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1258, 164);
+            this.label6.Location = new System.Drawing.Point(839, 107);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 22);
+            this.label6.Size = new System.Drawing.Size(47, 15);
             this.label6.TabIndex = 24;
             this.label6.Text = "Status";
             // 
@@ -132,9 +153,10 @@ namespace BasisData01
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(947, 17);
+            this.label5.Location = new System.Drawing.Point(631, 11);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 22);
+            this.label5.Size = new System.Drawing.Size(128, 15);
             this.label5.TabIndex = 23;
             this.label5.Text = "Masukkan Tanggal";
             // 
@@ -142,9 +164,10 @@ namespace BasisData01
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(654, 17);
+            this.label4.Location = new System.Drawing.Point(436, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 22);
+            this.label4.Size = new System.Drawing.Size(103, 15);
             this.label4.TabIndex = 22;
             this.label4.Text = "Masukkan Jam";
             // 
@@ -152,15 +175,17 @@ namespace BasisData01
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 256);
+            this.label3.Location = new System.Drawing.Point(13, 166);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 22);
+            this.label3.Size = new System.Drawing.Size(130, 15);
             this.label3.TabIndex = 21;
             this.label3.Text = "Keluhan/Keperluan";
             // 
             // cmbGuru
             // 
             this.cmbGuru.BackColor = System.Drawing.Color.Transparent;
+            this.cmbGuru.BorderRadius = 7;
             this.cmbGuru.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbGuru.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGuru.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -168,14 +193,16 @@ namespace BasisData01
             this.cmbGuru.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbGuru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbGuru.ItemHeight = 30;
-            this.cmbGuru.Location = new System.Drawing.Point(146, 120);
+            this.cmbGuru.Location = new System.Drawing.Point(97, 78);
+            this.cmbGuru.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbGuru.Name = "cmbGuru";
-            this.cmbGuru.Size = new System.Drawing.Size(207, 36);
+            this.cmbGuru.Size = new System.Drawing.Size(139, 36);
             this.cmbGuru.TabIndex = 20;
             // 
             // cmbSiswa
             // 
             this.cmbSiswa.BackColor = System.Drawing.Color.Transparent;
+            this.cmbSiswa.BorderRadius = 7;
             this.cmbSiswa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbSiswa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSiswa.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -183,18 +210,20 @@ namespace BasisData01
             this.cmbSiswa.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbSiswa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbSiswa.ItemHeight = 30;
-            this.cmbSiswa.Location = new System.Drawing.Point(146, 50);
+            this.cmbSiswa.Location = new System.Drawing.Point(97, 29);
+            this.cmbSiswa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbSiswa.Name = "cmbSiswa";
-            this.cmbSiswa.Size = new System.Drawing.Size(201, 36);
+            this.cmbSiswa.Size = new System.Drawing.Size(139, 36);
             this.cmbSiswa.TabIndex = 19;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 120);
+            this.label1.Location = new System.Drawing.Point(13, 78);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 22);
+            this.label1.Size = new System.Drawing.Size(80, 15);
             this.label1.TabIndex = 17;
             this.label1.Text = "Nama Guru";
             // 
@@ -202,9 +231,10 @@ namespace BasisData01
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 50);
+            this.label2.Location = new System.Drawing.Point(13, 32);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.Size = new System.Drawing.Size(87, 15);
             this.label2.TabIndex = 16;
             this.label2.Text = "Nama Siswa";
             // 
@@ -223,11 +253,12 @@ namespace BasisData01
             this.Column6,
             this.Column8});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 715);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 297);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1920, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(924, 215);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -282,9 +313,10 @@ namespace BasisData01
             this.guna2Button4.FillColor = System.Drawing.Color.Red;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button4.Location = new System.Drawing.Point(821, 404);
+            this.guna2Button4.Location = new System.Drawing.Point(547, 263);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(180, 50);
+            this.guna2Button4.Size = new System.Drawing.Size(120, 32);
             this.guna2Button4.TabIndex = 14;
             this.guna2Button4.Text = "Hapus";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
@@ -298,9 +330,10 @@ namespace BasisData01
             this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.Location = new System.Drawing.Point(557, 404);
+            this.guna2Button3.Location = new System.Drawing.Point(371, 263);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(180, 50);
+            this.guna2Button3.Size = new System.Drawing.Size(120, 32);
             this.guna2Button3.TabIndex = 13;
             this.guna2Button3.Text = "Update";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
@@ -314,9 +347,10 @@ namespace BasisData01
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(290, 404);
+            this.guna2Button2.Location = new System.Drawing.Point(193, 263);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(180, 50);
+            this.guna2Button2.Size = new System.Drawing.Size(120, 32);
             this.guna2Button2.TabIndex = 13;
             this.guna2Button2.Text = "Tampil";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
@@ -330,9 +364,10 @@ namespace BasisData01
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(24, 404);
+            this.guna2Button1.Location = new System.Drawing.Point(16, 263);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(180, 50);
+            this.guna2Button1.Size = new System.Drawing.Size(120, 32);
             this.guna2Button1.TabIndex = 12;
             this.guna2Button1.Text = "Tambah";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -350,12 +385,11 @@ namespace BasisData01
             this.txtKeperluan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtKeperluan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtKeperluan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtKeperluan.Location = new System.Drawing.Point(24, 283);
-            this.txtKeperluan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtKeperluan.Location = new System.Drawing.Point(16, 184);
             this.txtKeperluan.Name = "txtKeperluan";
             this.txtKeperluan.PlaceholderText = "";
             this.txtKeperluan.SelectedText = "";
-            this.txtKeperluan.Size = new System.Drawing.Size(419, 42);
+            this.txtKeperluan.Size = new System.Drawing.Size(279, 27);
             this.txtKeperluan.TabIndex = 6;
             // 
             // txtJam
@@ -371,35 +405,21 @@ namespace BasisData01
             this.txtJam.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtJam.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtJam.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtJam.Location = new System.Drawing.Point(656, 44);
-            this.txtJam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtJam.Location = new System.Drawing.Point(437, 29);
             this.txtJam.Name = "txtJam";
             this.txtJam.PlaceholderText = "";
             this.txtJam.SelectedText = "";
-            this.txtJam.Size = new System.Drawing.Size(201, 42);
+            this.txtJam.Size = new System.Drawing.Size(134, 27);
             this.txtJam.TabIndex = 5;
-            // 
-            // dtpTanggal
-            // 
-            this.dtpTanggal.Checked = true;
-            this.dtpTanggal.CustomFormat = "yyyy-MM-dd";
-            this.dtpTanggal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpTanggal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTanggal.Location = new System.Drawing.Point(924, 50);
-            this.dtpTanggal.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpTanggal.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpTanggal.Name = "dtpTanggal";
-            this.dtpTanggal.Size = new System.Drawing.Size(294, 36);
-            this.dtpTanggal.TabIndex = 27;
-            this.dtpTanggal.Value = new System.DateTime(2026, 9, 12, 17, 6, 18, 416);
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 1046);
+            this.ClientSize = new System.Drawing.Size(924, 512);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
