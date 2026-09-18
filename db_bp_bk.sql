@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Agu 2026 pada 16.21
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+-- Generation Time: Sep 18, 2026 at 09:25 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `bimbingan_konseling`
+-- Table structure for table `bimbingan_konseling`
 --
 
 CREATE TABLE `bimbingan_konseling` (
@@ -39,7 +39,7 @@ CREATE TABLE `bimbingan_konseling` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `buku`
+-- Table structure for table `buku`
 --
 
 CREATE TABLE `buku` (
@@ -54,7 +54,7 @@ CREATE TABLE `buku` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `guru`
+-- Table structure for table `guru`
 --
 
 CREATE TABLE `guru` (
@@ -64,7 +64,7 @@ CREATE TABLE `guru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `guru`
+-- Dumping data for table `guru`
 --
 
 INSERT INTO `guru` (`id_guru`, `nama_guru`, `nip`) VALUES
@@ -75,7 +75,30 @@ INSERT INTO `guru` (`id_guru`, `nama_guru`, `nip`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jadwal_konseling`
+-- Table structure for table `jadwal_guru`
+--
+
+CREATE TABLE `jadwal_guru` (
+  `id_jadwal_guru` int(11) NOT NULL,
+  `id_guru` int(11) NOT NULL,
+  `hari` enum('Senin','Selasa','Rabu','Kamis','Jumat','Sabtu') NOT NULL,
+  `jam_mulai` time NOT NULL,
+  `jam_selesai` time NOT NULL,
+  `status` enum('Tersedia','Tidak Tersedia') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `jadwal_guru`
+--
+
+INSERT INTO `jadwal_guru` (`id_jadwal_guru`, `id_guru`, `hari`, `jam_mulai`, `jam_selesai`, `status`) VALUES
+(1, 3, 'Selasa', '08:00:00', '10:00:00', 'Tidak Tersedia'),
+(2, 1, 'Rabu', '04:00:00', '10:00:00', 'Tidak Tersedia');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jadwal_konseling`
 --
 
 CREATE TABLE `jadwal_konseling` (
@@ -90,7 +113,7 @@ CREATE TABLE `jadwal_konseling` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `jadwal_konseling`
+-- Dumping data for table `jadwal_konseling`
 --
 
 INSERT INTO `jadwal_konseling` (`id_jadwal`, `id_siswa`, `id_guru`, `tanggal`, `jam`, `keperluan`, `status`, `alasan_penolakan`) VALUES
@@ -101,7 +124,7 @@ INSERT INTO `jadwal_konseling` (`id_jadwal`, `id_siswa`, `id_guru`, `tanggal`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori_pelanggaran`
+-- Table structure for table `kategori_pelanggaran`
 --
 
 CREATE TABLE `kategori_pelanggaran` (
@@ -113,7 +136,7 @@ CREATE TABLE `kategori_pelanggaran` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konseling`
+-- Table structure for table `konseling`
 --
 
 CREATE TABLE `konseling` (
@@ -131,7 +154,7 @@ CREATE TABLE `konseling` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login`
+-- Table structure for table `login`
 --
 
 CREATE TABLE `login` (
@@ -142,7 +165,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `login`
+-- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id_user`, `role`, `user`, `password`) VALUES
@@ -152,7 +175,7 @@ INSERT INTO `login` (`id_user`, `role`, `user`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pelanggaran_siswa`
+-- Table structure for table `pelanggaran_siswa`
 --
 
 CREATE TABLE `pelanggaran_siswa` (
@@ -166,7 +189,7 @@ CREATE TABLE `pelanggaran_siswa` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `perpus`
+-- Table structure for table `perpus`
 --
 
 CREATE TABLE `perpus` (
@@ -179,7 +202,7 @@ CREATE TABLE `perpus` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `siswa`
+-- Table structure for table `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -191,7 +214,7 @@ CREATE TABLE `siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `siswa`
+-- Dumping data for table `siswa`
 --
 
 INSERT INTO `siswa` (`id_siswa`, `nisn`, `nama_siswa`, `kelas`, `point_pelanggaran`) VALUES
@@ -199,33 +222,40 @@ INSERT INTO `siswa` (`id_siswa`, `nisn`, `nama_siswa`, `kelas`, `point_pelanggar
 (6, '123456', 'kanya', 'XII-RPL-A', 1),
 (7, '9876543', 'siapa', '12', 1),
 (8, '87654567', 'bilal', '12', 20),
-(9, '123456789', 'sapta', 'XII-RPL-A', 0);
+(10, '134578900', 'dawd', 'XI', 2);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `bimbingan_konseling`
+-- Indexes for table `bimbingan_konseling`
 --
 ALTER TABLE `bimbingan_konseling`
   ADD PRIMARY KEY (`id_konseling`),
   ADD KEY `fk_bk_siswa` (`id_siswa`);
 
 --
--- Indeks untuk tabel `buku`
+-- Indexes for table `buku`
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`nomor_buku`);
 
 --
--- Indeks untuk tabel `guru`
+-- Indexes for table `guru`
 --
 ALTER TABLE `guru`
   ADD PRIMARY KEY (`id_guru`);
 
 --
--- Indeks untuk tabel `jadwal_konseling`
+-- Indexes for table `jadwal_guru`
+--
+ALTER TABLE `jadwal_guru`
+  ADD PRIMARY KEY (`id_jadwal_guru`),
+  ADD KEY `fk_jadwal_guru_ref` (`id_guru`);
+
+--
+-- Indexes for table `jadwal_konseling`
 --
 ALTER TABLE `jadwal_konseling`
   ADD PRIMARY KEY (`id_jadwal`),
@@ -233,19 +263,19 @@ ALTER TABLE `jadwal_konseling`
   ADD KEY `fk_jadwal_guru` (`id_guru`);
 
 --
--- Indeks untuk tabel `kategori_pelanggaran`
+-- Indexes for table `kategori_pelanggaran`
 --
 ALTER TABLE `kategori_pelanggaran`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `login`
+-- Indexes for table `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indeks untuk tabel `pelanggaran_siswa`
+-- Indexes for table `pelanggaran_siswa`
 --
 ALTER TABLE `pelanggaran_siswa`
   ADD PRIMARY KEY (`id_pelanggaran`),
@@ -255,94 +285,106 @@ ALTER TABLE `pelanggaran_siswa`
   ADD KEY `id_siswa_3` (`id_siswa`);
 
 --
--- Indeks untuk tabel `perpus`
+-- Indexes for table `perpus`
 --
 ALTER TABLE `perpus`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `siswa`
+-- Indexes for table `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id_siswa`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `bimbingan_konseling`
+-- AUTO_INCREMENT for table `bimbingan_konseling`
 --
 ALTER TABLE `bimbingan_konseling`
   MODIFY `id_konseling` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `buku`
+-- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
   MODIFY `nomor_buku` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `guru`
+-- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
   MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `jadwal_konseling`
+-- AUTO_INCREMENT for table `jadwal_guru`
 --
-ALTER TABLE `jadwal_konseling`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `jadwal_guru`
+  MODIFY `id_jadwal_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori_pelanggaran`
+-- AUTO_INCREMENT for table `jadwal_konseling`
+--
+ALTER TABLE `jadwal_konseling`
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `kategori_pelanggaran`
 --
 ALTER TABLE `kategori_pelanggaran`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `login`
+-- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `pelanggaran_siswa`
+-- AUTO_INCREMENT for table `pelanggaran_siswa`
 --
 ALTER TABLE `pelanggaran_siswa`
   MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `perpus`
+-- AUTO_INCREMENT for table `perpus`
 --
 ALTER TABLE `perpus`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `siswa`
+-- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `bimbingan_konseling`
+-- Constraints for table `bimbingan_konseling`
 --
 ALTER TABLE `bimbingan_konseling`
   ADD CONSTRAINT `fk_bk_siswa` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`);
 
 --
--- Ketidakleluasaan untuk tabel `jadwal_konseling`
+-- Constraints for table `jadwal_guru`
+--
+ALTER TABLE `jadwal_guru`
+  ADD CONSTRAINT `fk_jadwal_guru_ref` FOREIGN KEY (`id_guru`) REFERENCES `guru` (`id_guru`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `jadwal_konseling`
 --
 ALTER TABLE `jadwal_konseling`
   ADD CONSTRAINT `fk_jadwal_guru` FOREIGN KEY (`id_guru`) REFERENCES `guru` (`id_guru`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_jadwal_siswa` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `pelanggaran_siswa`
+-- Constraints for table `pelanggaran_siswa`
 --
 ALTER TABLE `pelanggaran_siswa`
   ADD CONSTRAINT `fk_pelanggaran_siswa` FOREIGN KEY (`id_kategori`) REFERENCES `kategori_pelanggaran` (`id_kategori`) ON DELETE CASCADE ON UPDATE CASCADE,
