@@ -59,7 +59,7 @@ namespace BasisData01
             this.panel1.Controls.Add(this.cmbHari);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(913, 487);
             this.panel1.TabIndex = 0;
@@ -74,7 +74,7 @@ namespace BasisData01
             this.btnHapus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnHapus.ForeColor = System.Drawing.Color.Black;
             this.btnHapus.Location = new System.Drawing.Point(565, 170);
-            this.btnHapus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHapus.Margin = new System.Windows.Forms.Padding(2);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(127, 36);
             this.btnHapus.TabIndex = 11;
@@ -91,11 +91,12 @@ namespace BasisData01
             this.btnReset.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnReset.ForeColor = System.Drawing.Color.Black;
             this.btnReset.Location = new System.Drawing.Point(385, 170);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(127, 36);
             this.btnReset.TabIndex = 10;
             this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
             // 
             // btnEdit
             // 
@@ -107,7 +108,7 @@ namespace BasisData01
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.Location = new System.Drawing.Point(214, 170);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(127, 36);
             this.btnEdit.TabIndex = 9;
@@ -124,7 +125,7 @@ namespace BasisData01
             this.btnTambah.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTambah.ForeColor = System.Drawing.Color.Black;
             this.btnTambah.Location = new System.Drawing.Point(39, 170);
-            this.btnTambah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(2);
             this.btnTambah.Name = "btnTambah";
             this.btnTambah.Size = new System.Drawing.Size(127, 36);
             this.btnTambah.TabIndex = 8;
@@ -142,7 +143,7 @@ namespace BasisData01
             this.cmbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbStatus.ItemHeight = 30;
             this.cmbStatus.Location = new System.Drawing.Point(39, 71);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(113, 36);
             this.cmbStatus.TabIndex = 6;
@@ -155,7 +156,7 @@ namespace BasisData01
             this.dtpJamMulai.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpJamMulai.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpJamMulai.Location = new System.Drawing.Point(363, 21);
-            this.dtpJamMulai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpJamMulai.Margin = new System.Windows.Forms.Padding(2);
             this.dtpJamMulai.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpJamMulai.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpJamMulai.Name = "dtpJamMulai";
@@ -172,7 +173,7 @@ namespace BasisData01
             this.dtpJamSelesai.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpJamSelesai.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpJamSelesai.Location = new System.Drawing.Point(363, 71);
-            this.dtpJamSelesai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpJamSelesai.Margin = new System.Windows.Forms.Padding(2);
             this.dtpJamSelesai.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpJamSelesai.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpJamSelesai.Name = "dtpJamSelesai";
@@ -193,7 +194,7 @@ namespace BasisData01
             this.cmbGuru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbGuru.ItemHeight = 30;
             this.cmbGuru.Location = new System.Drawing.Point(39, 21);
-            this.cmbGuru.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbGuru.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGuru.Name = "cmbGuru";
             this.cmbGuru.Size = new System.Drawing.Size(113, 36);
             this.cmbGuru.TabIndex = 2;
@@ -211,20 +212,21 @@ namespace BasisData01
             this.cmbHari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbHari.ItemHeight = 30;
             this.cmbHari.Location = new System.Drawing.Point(192, 21);
-            this.cmbHari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbHari.Margin = new System.Windows.Forms.Padding(2);
             this.cmbHari.Name = "cmbHari";
             this.cmbHari.Size = new System.Drawing.Size(113, 36);
             this.cmbHari.TabIndex = 1;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Black;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 253);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 242);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(913, 234);
+            this.dataGridView1.Size = new System.Drawing.Size(913, 245);
             this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Form5
             // 
@@ -232,7 +234,7 @@ namespace BasisData01
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 487);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form5";
             this.Text = "Form5";
             this.panel1.ResumeLayout(false);

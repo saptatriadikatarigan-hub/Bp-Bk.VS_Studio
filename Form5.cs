@@ -493,5 +493,15 @@ namespace BasisData01
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
