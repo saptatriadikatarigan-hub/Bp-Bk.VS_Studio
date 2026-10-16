@@ -103,7 +103,7 @@ namespace BasisData01
             {
                 koneksi.Open();
 
-                string query = @"SELECTj.id_jadwal_guru AS ID,j.id_guru AS IDGuru,g.nama_guru AS Guru,j.hari AS Hari,TIME_FORMAT(j.jam_mulai, '%H:%i') AS `Jam Mulai`,TIME_FORMAT(j.jam_selesai, '%H:%i') AS `Jam Selesai`,j.status AS StatusFROM jadwal_guru jLEFT JOIN guru gON j.id_guru = g.id_guruORDER BY j.id_jadwal_guru DESC";
+                string query = @"SELECT j.id_jadwal_guru AS ID, j.id_guru AS IDGuru,g.nama_guru AS Guru,j.hari AS Hari, TIME_FORMAT(j.jam_mulai, '%H:%i') AS `Jam Mulai`,TIME_FORMAT(j.jam_selesai, '%H:%i') AS `Jam Selesai`,j.status AS Status FROM jadwal_guru j LEFT JOIN guru g ON j.id_guru = g.id_guru ORDER BY j.id_jadwal_guru DESC";
 
                 MySqlCommand cmd = new MySqlCommand(query, koneksi);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -188,16 +188,14 @@ namespace BasisData01
             {
                 koneksi.Open();
 
-                string query = @"UPDATE jadwal_guruSETid_guru = @idGuru,hari = @hari,jam_mulai = @jamMulai,jam_selesai = @jamSelesai,status = @statusWHERE id_jadwal_guru = @id";
+                    string query = @"UPDATE jadwal_guruSETid_guru = @idGuru,hari = @hari,jam_mulai = @jamMulai,jam_selesai = @jamSelesai,status = @statusWHERE id_jadwal_guru = @id";
 
                 MySqlCommand cmd = new MySqlCommand(query, koneksi);
 
                 cmd.Parameters.AddWithValue("@idGuru", cmbGuru.SelectedValue);
                 cmd.Parameters.AddWithValue("@hari", cmbHari.Text);
-                cmd.Parameters.AddWithValue("@jamMulai",dtpJamMulai.Value.ToString("HH:mm:ss")
-                );
-                cmd.Parameters.AddWithValue("@jamSelesai",dtpJamSelesai.Value.ToString("HH:mm:ss")
-                );
+                cmd.Parameters.AddWithValue("@jamMulai",dtpJamMulai.Value.ToString("HH:mm:ss"));
+                cmd.Parameters.AddWithValue("@jamSelesai",dtpJamSelesai.Value.ToString("HH:mm:ss"));
                 cmd.Parameters.AddWithValue("@status", cmbStatus.Text);
                 cmd.Parameters.AddWithValue("@id", idJadwal);
                 cmd.ExecuteNonQuery();
