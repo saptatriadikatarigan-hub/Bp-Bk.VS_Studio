@@ -30,6 +30,7 @@ namespace BasisData01
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnHapus = new Guna.UI2.WinForms.Guna2Button();
             this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
@@ -39,7 +40,6 @@ namespace BasisData01
             this.dtpJamSelesai = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cmbGuru = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbHari = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,17 @@ namespace BasisData01
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(913, 487);
             this.panel1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 242);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(913, 245);
+            this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnHapus
             // 
@@ -142,7 +153,7 @@ namespace BasisData01
             this.cmbStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbStatus.ItemHeight = 30;
-            this.cmbStatus.Location = new System.Drawing.Point(39, 71);
+            this.cmbStatus.Location = new System.Drawing.Point(39, 84);
             this.cmbStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(113, 36);
@@ -160,7 +171,7 @@ namespace BasisData01
             this.dtpJamMulai.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpJamMulai.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpJamMulai.Name = "dtpJamMulai";
-            this.dtpJamMulai.Size = new System.Drawing.Size(149, 23);
+            this.dtpJamMulai.Size = new System.Drawing.Size(159, 23);
             this.dtpJamMulai.TabIndex = 5;
             this.dtpJamMulai.Value = new System.DateTime(2026, 9, 12, 19, 27, 26, 842);
             this.dtpJamMulai.ValueChanged += new System.EventHandler(this.dtpJamMulai_ValueChanged);
@@ -177,7 +188,7 @@ namespace BasisData01
             this.dtpJamSelesai.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpJamSelesai.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpJamSelesai.Name = "dtpJamSelesai";
-            this.dtpJamSelesai.Size = new System.Drawing.Size(149, 23);
+            this.dtpJamSelesai.Size = new System.Drawing.Size(159, 23);
             this.dtpJamSelesai.TabIndex = 4;
             this.dtpJamSelesai.Value = new System.DateTime(2026, 9, 12, 19, 27, 26, 842);
             this.dtpJamSelesai.ValueChanged += new System.EventHandler(this.dtpJamSelesai_ValueChanged);
@@ -216,17 +227,6 @@ namespace BasisData01
             this.cmbHari.Name = "cmbHari";
             this.cmbHari.Size = new System.Drawing.Size(113, 36);
             this.cmbHari.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 242);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(913, 245);
-            this.dataGridView1.TabIndex = 12;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Form5
             // 
